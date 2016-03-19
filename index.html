@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myChat">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.7">
+  <title>Chat Simples</title>
+   <link rel='stylesheet' href='css/jqueryui.css'>
+   <link rel='stylesheet' href='css/style.css'>
+</head>
+
+<body ng-controller="ctrl">
+
+<div class="header">Conversas</div>
+
+<div class="container">
+    <ui-chat ng-repeat='chat in chats' name="{{chat.name}}" text="{{chat.text}}" type="R"></ui-chat>
+</div>
+
+<div class="footer">
+    <ul>
+        <li><span>Nome: </span><input type="text" ng-model="msg.name"></li>
+        <li><span>Mensagem: </span><input type="text" ng-model="msg.text"><button ng-click="send(msg)">Enviar</button></li>
+    </ul>
+</div>
+
+  <script src='js/jqueryUI.js'></script>
+  <script src="js/angular.min.js"></script>
+  <script src="js/angularfire.min.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/index.js"></script>
+ 
+</body>
+
+</html>
